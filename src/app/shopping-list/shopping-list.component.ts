@@ -3,7 +3,7 @@ import {Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from './shopping-list.service';
 import { Subscription, Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import * as fromShoppingList from '../shopping-list/store/shopping-list.reducer';
+import * as fromApp from '../store/app.reducer';
 import * as ShoppingListActions from '../shopping-list/store/shopping-list.actions';
 @Component({
   selector: 'app-shopping-list',
@@ -13,7 +13,7 @@ import * as ShoppingListActions from '../shopping-list/store/shopping-list.actio
 export class ShoppingListComponent implements OnInit {
   private subsription: Subscription;
   ingredients: Observable<{ ingredients: Ingredient[]}>;
-  constructor(private shoppingListService: ShoppingListService, private store: Store<fromShoppingList.AppState>) { }
+  constructor(private shoppingListService: ShoppingListService, private store: Store<fromApp.AppState>) { }
 
 
   ngOnInit() {
